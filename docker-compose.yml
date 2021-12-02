@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  pg:
+    image: "postgres:alpine"
+    ports:
+      - "5000:5432"
+    environment:
+      POSTGRES_DB: typeorm
+      POSTGRES_USER: pg
+      POSTGRES_PASSWORD: pg
+    volumes:
+      - ./tmp/pg:/var/lib/postgresql/data:delegated
